@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🧬 Interpretable Machine Learning to Accelerate Formulation Development
+# Interpretable Machine Learning to Accelerate Formulation Development
 
-### Predicting and Optimizing Drug Loading in Chitosan Nanoparticles
+## Predicting and Optimizing Drug Loading in Chitosan Nanoparticles
 
 [![Journal](https://img.shields.io/badge/Published%20in-Journal%20of%20Pharmaceutical%20Sciences-8A2BE2?style=for-the-badge)](#-how-to-cite)
 [![Year](https://img.shields.io/badge/Year-2026-orange?style=for-the-badge)](#-how-to-cite)
@@ -15,7 +15,7 @@
 
 <br>
 
-<img src="Graphical%20Abstract.jpg" alt="Graphical abstract of the study" width="850">
+![Graphical Abstract](Graphical%20Abstract.jpg)
 
 <br>
 
@@ -35,7 +35,7 @@
 
 ## 📖 Study Overview
 
-This repository accompanies the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** It presents an **explainable machine-learning workflow** for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
+This repository accompanies the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** It presents an explainable machine-learning workflow for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
 
 <div align="center">
 
@@ -61,9 +61,9 @@ The most influential predictors of drug loading, ranked by SHAP importance:
 
 | Rank | Feature | Description |
 | :--: | :------ | :---------- |
-| 🥇 1 | `D/C ratio` | Drug-to-chitosan ratio |
-| 🥈 2 | `PS` | Particle size |
-| 🥉 3 | `Drug_MW` | Drug molecular weight |
+| 1 | `D/C ratio` | Drug-to-chitosan ratio |
+| 2 | `PS` | Particle size |
+| 3 | `Drug_MW` | Drug molecular weight |
 | 4 | `Cross/C ratio` | Crosslinker-to-chitosan ratio |
 | 5 | `NumHDonors` | Number of hydrogen-bond donors |
 
@@ -136,7 +136,7 @@ pip install numpy==1.26.4 pandas==2.3.3 matplotlib==3.9.0 seaborn==0.13.2 \
 
 If you use the data, code, or methods from this repository, please cite:
 
-> Qaribnejad A, **Shiranirad S**, Movahedi S, Aftabi P, Varshochian R, Barzegar Z.
+> Qaribnejad A, Shiranirad S, Movahedi S, Aftabi P, Varshochian R, Barzegar Z.
 > **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.**
 > *Journal of Pharmaceutical Sciences*. 2026:104628.
 
@@ -146,14 +146,17 @@ If you use the data, code, or methods from this repository, please cite:
 <br>
 
 ```bibtex
-@article{qaribnejad2026interpretable,
-  title   = {Interpretable machine learning to accelerate formulation development:
-             Predicting and optimizing drug loading in chitosan nanoparticles},
-  author  = {Qaribnejad, Amirsajad and Shiranirad, Saba and Movahedi, Sara and
-             Aftabi, Parnia and Varshochian, Reyhaneh and Barzegar, Zeynab},
-  journal = {Journal of Pharmaceutical Sciences},
-  pages   = {104628},
-  year    = {2026}
+@article{QARIBNEJAD2026104628,
+title = {Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles},
+journal = {Journal of Pharmaceutical Sciences},
+pages = {104628},
+year = {2026},
+issn = {0022-3549},
+doi = {https://doi.org/10.1016/j.xphs.2026.104628},
+url = {https://www.sciencedirect.com/science/article/pii/S0022354926004764},
+author = {Amirsajad Qaribnejad and Saba Shiranirad and Sara Movahedi and Parnia Aftabia and Reyhaneh Varshochian and Zeynab Barzegar},
+keywords = {Machine learning, Chitosan nanoparticles, Drug loading, Artificial intelligence, Drug delivery},
+abstract = {Machine learning (ML) has the potential to revolutionize drug formulation development by replacing slow, labor-intensive trial and error with predictive optimization. Chitosan nanoparticles (CsNPs) are an important class of nanocarriers, yet achieving high drug loading (DL) remains challenging due to complex, interdependent formulation and molecular factors. Developing a model to predict DL could therefore offer a practical solution. A dataset of CsNPs formulations, including various small-molecule drugs and chitosan derivatives, was collected. Then, input features representing chitosan properties, formulation parameters, and drug molecular descriptors were selected. Multiple ML models including linear, kernel-based, tree-based, and boosting algorithms, were trained and evaluated using nested cross-validation. Redundant features were reduced by agglomerative hierarchical clustering. Feature importance and interpretability were assessed with SHAP. Finally, SHAP-derived explanations were embedded using t-SNE to produce a low-dimensional map identifying formulation clusters associated with high and low DL. For experimental validation, model-guided formulations containing hydrophilic and hydrophobic drugs were prepared and measured DL values were compared with model predictions using Bland-Altman. Natural Gradient Boosting (NGB) produced the lowest mean absolute error (MAE) for DL prediction, equal to 5.14. SHAP analysis indicated that drug-to-chitosan ratio, particle size, and drug molecular weight were the most influential predictors. The SHAP-t-SNE map associated high DL with higher drug-to-chitosan ratios, greater chitosan deacetylation, and increased hydrogen-bond donors. Experimental validation using Bland-Altman showed relative equivalence between measured and predicted DL values, confirming model reliability. The interpretable ML pipeline therefore accurately predicts DL and provides experimentally grounded guidance to accelerate formulation design.}
 }
 ```
 
@@ -169,8 +172,8 @@ If you use the data, code, or methods from this repository, please cite:
 
 </div>
 
-- 🏛️ Department of Pharmaceutics and Pharmaceutical Nanotechnology, School of Pharmacy, Shahid Beheshti University of Medical Sciences, Tehran, Iran
-- 🏛️ Department of Artificial Intelligence in Medicine, Advanced Technologies in Medicine, Iran University of Medical Sciences, Tehran, Iran
+- Department of Pharmaceutics and Pharmaceutical Nanotechnology, School of Pharmacy, Shahid Beheshti University of Medical Sciences, Tehran, Iran
+- Department of Artificial Intelligence in Medicine, Advanced Technologies in Medicine, Iran University of Medical Sciences, Tehran, Iran
 
 ---
 
