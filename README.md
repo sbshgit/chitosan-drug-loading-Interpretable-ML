@@ -1,72 +1,187 @@
-# Interpretable Machine Learning to Accelerate Formulation Development
+<div align="center">
 
-## Predicting and Optimizing Drug Loading in Chitosan Nanoparticles
+# 🧬 Interpretable Machine Learning to Accelerate Formulation Development
 
-[![Python](https://img.shields.io/badge/Python-3.9.12-blue.svg)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+### Predicting and Optimizing Drug Loading in Chitosan Nanoparticles
 
-This repository provides the curated dataset, Python implementation, and supporting analyses for the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** The work presents an explainable machine-learning workflow for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
+[![Journal](https://img.shields.io/badge/Published%20in-Journal%20of%20Pharmaceutical%20Sciences-8A2BE2?style=for-the-badge)](#-how-to-cite)
+[![Year](https://img.shields.io/badge/Year-2026-orange?style=for-the-badge)](#-how-to-cite)
 
-![Graphical Abstract](Graphical%20Abstract.jpg)
+[![Python](https://img.shields.io/badge/Python-3.9.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6.1-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![NGBoost](https://img.shields.io/badge/NGBoost-0.5.1-2E8B57)](https://github.com/stanfordmlgroup/ngboost)
+[![SHAP](https://img.shields.io/badge/SHAP-0.49.1-FF0D57)](https://github.com/shap/shap)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Study overview
+<br>
 
-The literature-curated dataset comprises **141 experimental drug-loading measurements**, covering **32 small-molecule drugs**, **39 unique drug–chitosan pairs**, and four chitosan-based nanoparticle types: conventional chitosan, carboxymethyl chitosan, trimethyl chitosan, and thiolated chitosan.
+<img src="Graphical%20Abstract.jpg" alt="Graphical abstract of the study" width="850">
 
-Ten regression algorithms were benchmarked using **15 input features** describing polymer properties, formulation parameters, and molecular descriptors. Following correlation-based feature selection using Spearman rank correlation and agglomerative hierarchical clustering, a final **14-feature Natural Gradient Boosting (NGB)** model was developed and interpreted using TreeSHAP.
+<br>
 
-The most influential predictors of drug loading were:
+**Curated dataset · Python implementation · Explainable ML analyses**
 
-1. Drug-to-chitosan ratio (D/C ratio)
-2. Particle size (PS)
-3. Drug molecular weight (Drug_MW)
-4. Crosslinker-to-chitosan ratio (Cross/C ratio)
-5. Number of hydrogen-bond donors (NumHDonors)
+[Overview](#-study-overview) •
+[Key Findings](#-key-findings) •
+[Workflow](#-workflow) •
+[Repository](#-repository-organization) •
+[Environment](#%EF%B8%8F-software-environment) •
+[Citation](#-how-to-cite) •
+[Authors](#-authors-and-affiliations)
 
-## Repository organization
+</div>
+
+---
+
+## 📖 Study Overview
+
+This repository accompanies the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** It presents an **explainable machine-learning workflow** for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
+
+<div align="center">
+
+| 🧪 Measurements | 💊 Drugs | 🔗 Drug–Chitosan Pairs | 🧫 Chitosan Types | 🤖 Models Benchmarked | 📊 Final Features |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| **141** | **32** | **39** | **4** | **10** | **14** |
+
+</div>
+
+**Chitosan-based nanoparticle types covered:**
+- Conventional chitosan
+- Carboxymethyl chitosan
+- Trimethyl chitosan
+- Thiolated chitosan
+
+Ten regression algorithms were benchmarked using **15 input features** describing polymer properties, formulation parameters, and molecular descriptors. After correlation-based feature selection (Spearman rank correlation + agglomerative hierarchical clustering), a final **14-feature Natural Gradient Boosting (NGB)** model was developed and interpreted with **TreeSHAP**.
+
+---
+
+## 🔑 Key Findings
+
+The most influential predictors of drug loading, ranked by SHAP importance:
+
+| Rank | Feature | Description |
+| :--: | :------ | :---------- |
+| 🥇 1 | `D/C ratio` | Drug-to-chitosan ratio |
+| 🥈 2 | `PS` | Particle size |
+| 🥉 3 | `Drug_MW` | Drug molecular weight |
+| 4 | `Cross/C ratio` | Crosslinker-to-chitosan ratio |
+| 5 | `NumHDonors` | Number of hydrogen-bond donors |
+
+---
+
+## 🔄 Workflow
+
+```mermaid
+flowchart LR
+    A[📚 Literature-curated<br/>dataset<br/>141 measurements] --> B[🤖 Benchmark<br/>10 ML models<br/>15 features]
+    B --> C[🧹 Feature selection<br/>Spearman + hierarchical<br/>clustering]
+    C --> D[🌳 Final NGBoost<br/>model<br/>14 features]
+    D --> E[🔍 TreeSHAP<br/>interpretation]
+    E --> F[🧪 Model-guided<br/>laboratory validation]
+```
+
+---
+
+## 📁 Repository Organization
 
 ```text
 .
-├── Models Training/                    # Training and benchmarking of 10 ML models using 15 features
-├── Box Plot/                           # Box-plot visualizations of model performance and prediction errors
-├── Feature selection/                  # Spearman correlation and agglomerative clustering; selection of 14 features and final NGB model training
-├── SHAP/                               # TreeSHAP analyses: global feature importance, beeswarm, decision paths, force plots, and t-SNE
-├── Model-guided Laboratory Validation/ # Analyses of the experimental validation of model-guided formulations
-├── data/                               # Curated data used in the study
-├── LICENSE
-└── README.md
+├── 📂 Models Training/                     # Training & benchmarking of 10 ML models (15 features)
+├── 📂 Box Plot/                            # Box plots of model performance and prediction errors
+├── 📂 Feature selection/                   # Spearman correlation & agglomerative clustering;
+│                                           #   14-feature selection and final NGB model training
+├── 📂 SHAP/                                # TreeSHAP: global importance, beeswarm, decision paths,
+│                                           #   force plots, and t-SNE
+├── 📂 Model-guided Laboratory Validation/  # Experimental validation of model-guided formulations
+├── 📂 data/                                # Curated dataset used in the study
+├── 📄 LICENSE
+└── 📄 README.md
 ```
 
-## Software environment
+---
 
-The code and analyses use the following Python environment and library versions:
+## ⚙️ Software Environment
 
-| Software / library | Version |
-| :----------------- | :-----: |
-| Python             | 3.9.12  |
-| NumPy              | 1.26.4  |
-| pandas             |  2.3.3  |
-| Matplotlib         |  3.9.0  |
-| Seaborn            | 0.13.2  |
-| scikit-learn       |  1.6.1  |
-| XGBoost            |  2.1.4  |
-| LightGBM           |  4.3.0  |
-| NGBoost            |  0.5.1  |
-| SHAP               | 0.49.1  |
-| openpyxl           |  3.1.2  |
+All analyses were performed with the following Python environment:
 
-## How to cite
+<div align="center">
 
-Please cite the following article when using the data, code, or methods from this repository:
+| Library | Version | | Library | Version |
+| :------ | :-----: |-| :------ | :-----: |
+| 🐍 Python | `3.9.12` | | 🌲 XGBoost | `2.1.4` |
+| 🔢 NumPy | `1.26.4` | | 💡 LightGBM | `4.3.0` |
+| 🐼 pandas | `2.3.3` | | 📈 NGBoost | `0.5.1` |
+| 📊 Matplotlib | `3.9.0` | | 🔍 SHAP | `0.49.1` |
+| 🎨 Seaborn | `0.13.2` | | 📑 openpyxl | `3.1.2` |
+| 🧠 scikit-learn | `1.6.1` | | | |
 
-> Qaribnejad A, **Shiranirad S**, Movahedi S, Aftabi P, Varshochian R, Barzegar Z. **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.** _Journal of Pharmaceutical Sciences_. 2026:104628.
+</div>
 
-## Authors and affiliations
+<details>
+<summary><b>📦 Quick install</b></summary>
 
-**Amirsajad Qaribnejad**, **Saba Shiranirad**, **Sara Movahedi**, **Parnia Aftabi**, **Reyhaneh Varshochian**, and **Zeynab Barzegar**.
+<br>
 
-- Department of Pharmaceutics and Pharmaceutical Nanotechnology, School of Pharmacy, Shahid Beheshti University of Medical Sciences, Tehran, Iran.
-- Department of Artificial Intelligence in Medicine, Advanced Technologies in Medicine, Iran University of Medical Sciences, Tehran, Iran.
+```bash
+pip install numpy==1.26.4 pandas==2.3.3 matplotlib==3.9.0 seaborn==0.13.2 \
+            scikit-learn==1.6.1 xgboost==2.1.4 lightgbm==4.3.0 \
+            ngboost==0.5.1 shap==0.49.1 openpyxl==3.1.2
+```
 
-## License
+</details>
+
+---
+
+## 📝 How to Cite
+
+If you use the data, code, or methods from this repository, please cite:
+
+> Qaribnejad A, **Shiranirad S**, Movahedi S, Aftabi P, Varshochian R, Barzegar Z.
+> **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.**
+> *Journal of Pharmaceutical Sciences*. 2026:104628.
+
+<details>
+<summary><b>📋 BibTeX</b></summary>
+
+<br>
+
+```bibtex
+@article{qaribnejad2026interpretable,
+  title   = {Interpretable machine learning to accelerate formulation development:
+             Predicting and optimizing drug loading in chitosan nanoparticles},
+  author  = {Qaribnejad, Amirsajad and Shiranirad, Saba and Movahedi, Sara and
+             Aftabi, Parnia and Varshochian, Reyhaneh and Barzegar, Zeynab},
+  journal = {Journal of Pharmaceutical Sciences},
+  pages   = {104628},
+  year    = {2026}
+}
+```
+
+</details>
+
+---
+
+## 👥 Authors and Affiliations
+
+<div align="center">
+
+**Amirsajad Qaribnejad** · **Saba Shiranirad** · **Sara Movahedi** · **Parnia Aftabi** · **Reyhaneh Varshochian** · **Zeynab Barzegar**
+
+</div>
+
+- 🏛️ Department of Pharmaceutics and Pharmaceutical Nanotechnology, School of Pharmacy, Shahid Beheshti University of Medical Sciences, Tehran, Iran
+- 🏛️ Department of Artificial Intelligence in Medicine, Advanced Technologies in Medicine, Iran University of Medical Sciences, Tehran, Iran
+
+---
+
+## 📄 License
 
 This repository is distributed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+<div align="center">
+
+<br>
+
+⭐ *If you find this work useful, please consider starring the repository!* ⭐
+
+</div>
