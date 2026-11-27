@@ -22,4 +22,4 @@ This repository contains the curated dataset and Python code accompanying our st
 
 Please cite our work when using this repository:
 
-Qaribnejad A, **Shiranirad S**, Movahedi S, Aftabi P, Varshochian R, Barzegar Z. **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.** *Journal of Pharmaceutical Sciences*. 2026:104628.
+Qaribnejad A, Shiranirad S, Movahedi S, Aftabi P, Varshochian R, Barzegar Z. **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.** *Journal of Pharmaceutical Sciences*. 2026:104628.
