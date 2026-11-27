@@ -6,9 +6,7 @@
 
 This repository provides the curated dataset, Python implementation, and supporting analyses for the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** The work presents an explainable machine-learning workflow for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
 
-<p align="center">
-  <img src="Graphical%20Abstract.jpg" alt="Graphical abstract of the study" width="850">
-</p>
+![Graphical Abstract](Graphical%20Abstract.jpg)
 
 ## Study overview
 
