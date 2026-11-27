@@ -19,15 +19,6 @@
 
 <br>
 
-**Curated dataset · Python implementation · Explainable ML analyses**
-
-[Overview](#-study-overview) •
-[Key Findings](#-key-findings) •
-[Workflow](#-workflow) •
-[Repository](#-repository-organization) •
-[Environment](#%EF%B8%8F-software-environment) •
-[Citation](#-how-to-cite) •
-[Authors](#-authors-and-affiliations)
 
 </div>
 
