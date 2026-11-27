@@ -2,37 +2,21 @@
 
 ## Predicting and Optimizing Drug Loading in Chitosan Nanoparticles
 
-[![Python](https://img.shields.io/badge/Python-3.9.12-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9.12-blue.svg)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This repository contains the curated data, Python code, and analyses supporting the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** The project develops an explainable machine-learning workflow to predict drug loading (DL) in chitosan-based nanoparticles and use model-derived insights to guide formulation development and laboratory testing.
+This repository provides the curated dataset, Python implementation, and supporting analyses for the study **“Interpretable Machine Learning to Accelerate Formulation Development: Predicting and Optimizing Drug Loading in Chitosan Nanoparticles.”** The work presents an explainable machine-learning workflow for predicting drug loading (DL) in chitosan-based nanoparticles and supporting data-informed formulation development.
 
-![Graphical Abstract](Graphical%20Abstract.jpg)
+<p align="center">
+  <img src="Graphical%20Abstract.jpg" alt="Graphical abstract of the study" width="850">
+</p>
 
-## Project overview
+## Study overview
 
-Achieving high drug loading in chitosan nanoparticles is challenging because loading depends on multiple, interrelated factors, including drug properties, polymer characteristics, and formulation parameters. This study combines literature-derived experimental data, regression modelling, explainability, and laboratory validation to investigate these relationships and support more informed formulation decisions.
+The literature-curated dataset comprises **141 experimental drug-loading measurements**, covering **32 small-molecule drugs**, **39 unique drug–chitosan pairs**, and four chitosan-based nanoparticle types: conventional chitosan, carboxymethyl chitosan, trimethyl chitosan, and thiolated chitosan.
 
-### Dataset
+Ten regression algorithms were benchmarked using **15 input features** describing polymer properties, formulation parameters, and molecular descriptors. Following correlation-based feature selection using Spearman rank correlation and agglomerative hierarchical clustering, a final **14-feature Natural Gradient Boosting (NGB)** model was developed and interpreted using TreeSHAP.
 
-The literature-curated dataset comprises:
-
-- **141 experimental drug-loading measurements**
-- **32 small-molecule drugs**
-- **39 unique drug–chitosan pairs**
-- **Four chitosan-based nanoparticle types:** conventional chitosan, carboxymethyl chitosan, trimethyl chitosan, and thiolated chitosan
-
-The initial dataset included **15 input features** describing chitosan properties, formulation parameters, and molecular descriptors of the drug and formulation components. Following correlation-based feature selection, the final model used **14 features**.
-
-### Machine-learning models
-
-The following ten regression algorithms were evaluated:
-
-Multiple Linear Regression (MLR), Lasso, Partial Least Squares (PLS), Support Vector Regression (SVR), k-Nearest Neighbors (k-NN), Decision Tree (DT), Random Forest (RF), Extreme Gradient Boosting (XGBoost), Light Gradient Boosting Machine (LightGBM), Natural Gradient Boosting (NGB)
-
-### Important predictors of drug loading
-
-TreeSHAP identified the following as the most influential predictors, in descending order:
+The most influential predictors of drug loading were:
 
 1. Drug-to-chitosan ratio (D/C ratio)
 2. Particle size (PS)
@@ -44,21 +28,39 @@ TreeSHAP identified the following as the most influential predictors, in descend
 
 ```text
 .
-├── Models Training/                       # Training of 10 Machine Learning models using 15 features
-├── Box Plot/                              # Box plots visualizing model performance and prediction errors
-├── Feature selection/                     # Spearman correlation and agglomerative clustering; selection of 14 features and final NGB model training
-├── SHAP/                                  # TreeSHAP interpretation: global feature importance, beeswarm, decision paths, force plots, and t-SNE
-├── Model-guided Laboratory Validation/    # Analyses of the experimental validation of model-guided formulations
-├── data/                                  # Curated data used in the study
+├── Models Training/                    # Training and benchmarking of 10 ML models using 15 features
+├── Box Plot/                           # Box-plot visualizations of model performance and prediction errors
+├── Feature selection/                  # Spearman correlation and agglomerative clustering; selection of 14 features and final NGB model training
+├── SHAP/                               # TreeSHAP analyses: global feature importance, beeswarm, decision paths, force plots, and t-SNE
+├── Model-guided Laboratory Validation/ # Analyses of the experimental validation of model-guided formulations
+├── data/                               # Curated data used in the study
 ├── LICENSE
 └── README.md
 ```
 
+## Software environment
+
+The code and analyses use the following Python environment and library versions:
+
+| Software / library | Version |
+| :----------------- | :-----: |
+| Python             | 3.9.12  |
+| NumPy              | 1.26.4  |
+| pandas             |  2.3.3  |
+| Matplotlib         |  3.9.0  |
+| Seaborn            | 0.13.2  |
+| scikit-learn       |  1.6.1  |
+| XGBoost            |  2.1.4  |
+| LightGBM           |  4.3.0  |
+| NGBoost            |  0.5.1  |
+| SHAP               | 0.49.1  |
+| openpyxl           |  3.1.2  |
+
 ## How to cite
 
-Please cite the article when using the data, code, or methods from this repository:
+Please cite the following article when using the data, code, or methods from this repository:
 
-> Qaribnejad A, Shiranirad S, Movahedi S, Aftabi P, Varshochian R, Barzegar Z. **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.** _Journal of Pharmaceutical Sciences_. 2026:104628.
+> Qaribnejad A, **Shiranirad S**, Movahedi S, Aftabi P, Varshochian R, Barzegar Z. **Interpretable machine learning to accelerate formulation development: Predicting and optimizing drug loading in chitosan nanoparticles.** _Journal of Pharmaceutical Sciences_. 2026:104628.
 
 ## Authors and affiliations
 
@@ -69,4 +71,4 @@ Please cite the article when using the data, code, or methods from this reposito
 
 ## License
 
-The repository is distributed under the **MIT License**. See the [`LICENSE`](LICENSE) file for details.
+This repository is distributed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
