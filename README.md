@@ -108,18 +108,6 @@ All analyses were performed with the following Python environment:
 
 </div>
 
-<details>
-<summary><b>📦 Quick install</b></summary>
-
-<br>
-
-```bash
-pip install numpy==1.26.4 pandas==2.3.3 matplotlib==3.9.0 seaborn==0.13.2 \
-            scikit-learn==1.6.1 xgboost==2.1.4 lightgbm==4.3.0 \
-            ngboost==0.5.1 shap==0.49.1 openpyxl==3.1.2
-```
-
-</details>
 
 ---
 
